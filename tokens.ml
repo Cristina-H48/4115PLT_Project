@@ -10,5 +10,4 @@ type token =
   | RPAREN        
   | SEMICOLON     
   | COMMA         
-
-exception LexingError of string  (* Error message for lexing issues *)
+exception LexingError of string
