@@ -281,7 +281,19 @@ Do3
 **Expected Output**:
 
 ```plaintext
-LexingError: Invalid character '#' at position 25
+<MUSICNOTE, "do4_">
+<MUSICNOTE, "la4-">
+<MUSICNOTE, "mi3#">
+<SEMICOLON, ";">
+<IDENTIFIER, "mynameis">
+<COMMA, ",">
+<MUSICNOTE, "mi3#">
+<COMMA, ",">
+<COMMA, ",">
+<COMMA, ",">
+<STRING_LITERAL, "365^&*()">
+<COMMA, ",">
+<IDENTIFIER, "Do3">
 ```
 
 ---
