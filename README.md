@@ -60,7 +60,7 @@ Our custom language is designed for music composition and playback commands. It 
    COMPOSER = "Some Composer";
    ```
 
-4. **Play Command**: Defines the notes to be played along with their duration. A note consists of a solfege syllable (e.g., `Do`, `Re`), an octave (0-7), and an optional accidental (`#`, `-`, `_`).
+4. **Play Command**: Defines the notes to be played along with their duration. A note consists of a solfege syllable (e.g., `Do`, `Re`), an octave (0-7), and an required accidental (`#`, `-`, `_`).
 
    ```plaintext
    PLAY Do4# quarter;
@@ -107,7 +107,7 @@ Our language consists of the following token types:
 
    - **Regex**: `(do|re|mi|fa|so|la|ti)[0-7](#|-|_)`
 
-7. **Durations**: Indicate how long a note is held, such as `quarter`, `half`, `whole`.
+7. **Durations**: Indicate duration of a music note, such as `quarter`, `half`, `whole`.
 
    - **Regex**: `whole|half|quarter|eighth|sixteenth`
 
@@ -122,7 +122,7 @@ Our language consists of the following token types:
 |----------------|---------------|-------------------------------------------|
 | KEYWORD        | `play`        | Reserved words                            |
 | IDENTIFIER     | `Piano`       | User-defined names                        |
-| OPERATOR       | `=``:`        | Assignment operator                       |
+| OPERATOR       | `= :`         | Assignment operator                       |
 | NUMBER         | `120`         | Numeric literals                          |
 | STRING_LITERAL | `"Beethoven"` | Text enclosed in double quotes            |
 | MUSICNOTE      | `Do5#`        | Music note notation                       |
@@ -139,7 +139,7 @@ Our language consists of the following token types:
 ### **Prerequisites**
 
 - **OCaml Compiler**: Ensure that the OCaml compiler (`ocamlc`) is installed on your system.
-- Instruction for installing Ocaml: https://ocaml.org/docs/installing-ocaml
+- General instruction for installing Ocaml: https://ocaml.org/docs/installing-ocaml
 
   - **Installation on Ubuntu/Debian**:
     ```bash
