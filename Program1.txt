@@ -1,0 +1,6 @@
+INSTRUMENT = Piano;
+BPM = 120;
+COMPOSER = "some composer";
+TITLE = "Symphony No. 5";
+PLAY Do4# quarter;
+END;
