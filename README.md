@@ -166,10 +166,19 @@ Our language consists of the following token types:
 ./install_and_run.sh Program1.txt
 ```
 3. **Alternative ways to run**
-```base
-ocamlc -o lexer.exe tokens.ml lexer.ml main.ml
-.\lexer.exe <input_file>
-```
+- First check if your OCaml is correctly installed by running
+  ```bash
+  ocamlc -v
+  ```
+- If OCaml is installed, this will output the version information
+- Run compilation command
+   ```bash
+   ocamlc -o lexer.exe tokens.ml lexer.ml main.ml
+   ```
+- Run the executable
+  ```bash
+  ./lexer.exe <input_file>
+  ```
 ---
 
 ## **Detailed Description of Each Step**
