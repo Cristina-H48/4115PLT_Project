@@ -238,9 +238,7 @@ END;
 **Content**:
 
 ```plaintext
-INSTRUMENT = Violin;
-BPM = 100;
-PLAY Mi5_ Fa5_ Mi5_ Re5_ Do5_ Re5_ Mi5_;
+PLAY (Do4# quarter, Re4_ half);
 END;
 ```
 
@@ -249,22 +247,14 @@ END;
 **Expected Output**:
 
 ```plaintext
-<KEYWORD, "INSTRUMENT">
-<OPERATOR, "=">
-<IDENTIFIER, "Violin">
-<SEMICOLON, ";">
-<KEYWORD, "BPM">
-<OPERATOR, "=">
-<NUMBER, "100">
-<SEMICOLON, ";">
 <KEYWORD, "PLAY">
-<MUSICNOTE, "Mi5_">
-<MUSICNOTE, "Fa5_">
-<MUSICNOTE, "Mi5_">
-<MUSICNOTE, "Re5_">
-<MUSICNOTE, "Do5_">
-<MUSICNOTE, "Re5_">
-<MUSICNOTE, "Mi5_">
+<LPAREN, "(">
+<MUSICNOTE, "Do4#">
+<DURATION, "quarter">
+<COMMA, ",">
+<MUSICNOTE, "Re4_">
+<DURATION, "half">
+<RPAREN, ")">
 <SEMICOLON, ";">
 <KEYWORD, "END">
 <SEMICOLON, ";">
@@ -280,13 +270,13 @@ END;
 
 ```plaintext
 do4_ la4- mi3#;
-mynameis###,
+mynameis,
 mi3#,,,
 "365^&*()",
 Do3
 ```
 
-**Description**: This program includes invalid characters such as `#` in an identifier.
+**Description**: This test case will run without any errors even it does not make sense
 
 **Expected Output**:
 
@@ -324,41 +314,16 @@ LexingError: Invalid character '*' at position 65
 **Content**:
 
 ```plaintext
-INSTRUMENT = Piano;
-BPM = 120;
-COMPOSER = "Ludwig van Beethoven";
-TITLE = "Symphony No. 5";
-PLAY Do4# quarter;
-END;
+title "Symphony No. 5
+composer "Beethoven";
 ```
 
-**Description**: A well-formed program that sets up a musical piece with uppercase keywords and plays a note.
+**Description**: This program will throw an error since it's missing a closing quote.
 
 **Expected Output**:
 
 ```plaintext
-<KEYWORD, "INSTRUMENT">
-<OPERATOR, "=">
-<IDENTIFIER, "Piano">
-<SEMICOLON, ";">
-<KEYWORD, "BPM">
-<OPERATOR, "=">
-<NUMBER, "120">
-<SEMICOLON, ";">
-<KEYWORD, "COMPOSER">
-<OPERATOR, "=">
-<STRING_LITERAL, "Ludwig van Beethoven">
-<SEMICOLON, ";">
-<KEYWORD, "TITLE">
-<OPERATOR, "=">
-<STRING_LITERAL, "Symphony No. 5">
-<SEMICOLON, ";">
-<KEYWORD, "PLAY">
-<MUSICNOTE, "Do4#">
-<DURATION, "quarter">
-<SEMICOLON, ";">
-<KEYWORD, "END">
-<SEMICOLON, ";">
+Lexer.LexingError("String literal not terminated before end of line")
 ```
 
 ---
