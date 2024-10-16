@@ -151,32 +151,25 @@ Our language consists of the following token types:
     brew install ocaml
     ```
 
-### **Installation Steps**
+### **Execution Steps**
 
-1. **Clone the Repository**: Download or clone the project files to your local machine.
+1. **Clone the Repository**: Download or clone the project files.
 
-2. **Make the Script Executable**: Ensure the `install_and_run.sh` script has execute permissions.
-
-   ```bash
-   chmod +x install_and_run.sh
-   ```
-
-### **Execution**
-
-Run the lexer using the provided shell script:
+2. **Run the lexer using the provided shell script**
 
 ```bash
 ./install_and_run.sh <input_file>
 ```
-
-- Replace `<input_file>` with the path to one of the sample input programs.
-
 **Example**:
 
 ```bash
 ./install_and_run.sh Program1.txt
 ```
-
+3. **Alternative ways to run**
+```base
+ocamlc -o lexer.exe tokens.ml lexer.ml main.ml
+.\lexer.exe <input_file>
+```
 ---
 
 ## **Detailed Description of Each Step**
