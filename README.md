@@ -154,8 +154,12 @@ Our language consists of the following token types:
 ### **Execution Steps**
 
 1. **Clone the Repository**: Download or clone the project files.
+2. **Make the Script Executable**: Ensure the `install_and_run.sh` script has execute permissions.
 
-2. **Run the lexer using the provided shell script**
+   ```bash
+   chmod +x install_and_run.sh
+   ```
+3. **Run the lexer using the provided shell script**
 
 ```bash
 ./install_and_run.sh <input_file>
@@ -238,8 +242,10 @@ END;
 **Content**:
 
 ```plaintext
-PLAY (Do4# quarter, Re4_ half);
-END;
+INSTRUMENT = Violin;
+BPM = 100;
+PLAY Mi5_ Fa5_ Mi5_ Re5_ Do5_ Re5_ Mi5_;
+END;       
 ```
 
 **Description**: This program intends to play a sequence of music notes on a violin at 100 BPM.
@@ -247,14 +253,22 @@ END;
 **Expected Output**:
 
 ```plaintext
+<KEYWORD, "INSTRUMENT">
+<OPERATOR, "=">
+<IDENTIFIER, "Violin">
+<SEMICOLON, ";">
+<KEYWORD, "BPM">
+<OPERATOR, "=">
+<NUMBER, "100">
+<SEMICOLON, ";">
 <KEYWORD, "PLAY">
-<LPAREN, "(">
-<MUSICNOTE, "Do4#">
-<DURATION, "quarter">
-<COMMA, ",">
-<MUSICNOTE, "Re4_">
-<DURATION, "half">
-<RPAREN, ")">
+<MUSICNOTE, "Mi5_">
+<MUSICNOTE, "Fa5_">
+<MUSICNOTE, "Mi5_">
+<MUSICNOTE, "Re5_">
+<MUSICNOTE, "Do5_">
+<MUSICNOTE, "Re5_">
+<MUSICNOTE, "Mi5_">
 <SEMICOLON, ";">
 <KEYWORD, "END">
 <SEMICOLON, ";">
