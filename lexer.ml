@@ -10,7 +10,8 @@ let lex source =
   let is_digit c =
       match c with
       |'0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9' ->true
-      | _ -> false   
+      | _ -> false 
+        
   in 
   let is_whitespace c =
     c= ' '||c='\t'||c='\n'||c='\r' in
@@ -173,6 +174,8 @@ let lex source =
         | '=' | ':'->
             tokens:=OPERATOR (String.make 1 c)::!tokens;
             pos:= !pos+1
+        (*match c w*)
+
         | '"'->
             let str_literal=read_string_literal () in
             tokens:=STRING_LITERAL str_literal::!tokens
