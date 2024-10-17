@@ -1,2 +1,4 @@
-PLAY (Do4# quarter, Re4_ half);
+INSTRUMENT = Violin;
+BPM = 100;
+PLAY Mi5_ Fa5_ Mi5_ Re5_ Do5_ Re5_ Mi5_;
 END;
