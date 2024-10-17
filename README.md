@@ -93,7 +93,7 @@ Our language consists of the following token types:
 
 3. **Operators**: Used for assignments, including `=` and `:`.
 
-   - **Regex**: `=:`
+   - **Regex**: `=|:`
 
 4. **Numbers**: Represent integer values, such as BPM or the octave of a note.
 
