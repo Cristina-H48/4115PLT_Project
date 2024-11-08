@@ -353,4 +353,24 @@ Lexer.LexingError("String literal not terminated before end of line")
 ```
 
 ---
- 
+cfg:
+
+ Program -> StatementList
+
+StatementList -> Statement StatementList | ε
+
+Statement -> Assignment ';' | PlayStatement ';' | 'END' ';'
+
+Assignment -> 'INSTRUMENT' '=' IDENTIFIER
+            | 'BPM' '=' NUMBER
+            | 'TITLE' '=' STRING_LITERAL
+            | 'COMPOSER' '=' STRING_LITERAL
+
+PlayStatement -> 'PLAY' MusicNoteList
+
+MusicNoteList -> MusicNote MusicNoteList | ε
+
+MusicNote -> MUSICNOTE [Duration]
+
+Duration -> DURATION
+
